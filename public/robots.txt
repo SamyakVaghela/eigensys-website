@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anamnos.dev/sitemap.xml

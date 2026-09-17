@@ -1,0 +1,257 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Anamnos design tokens
+
+   Near-monochrome by intent: structure comes from borders, type and
+   space. One accent — a warm clay orange — marks what is live,
+   selected or in motion, and nothing else.
+
+   Token names describe a role, not a colour, so light and dark are the
+   same design with the values swapped:
+
+     paper    page ground          ink      primary text / inverted surfaces
+     mist     quiet surface        fog      hover surface
+     charcoal strong body text     graphite body text        ash  labels
+     line     hairline             line-strong  emphasised hairline
+     bone / smoke / night-line     text + rules on an inverted band
+     void / chalk                  fixed near-black and near-white
+                                   (terminal figures, which never invert)
+------------------------------------------------------------------- */
+@theme {
+  --font-sans: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono Variable', 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Light theme (the default) */
+  --color-paper: #ffffff;
+  --color-ink: #0a0a0b;
+  --color-charcoal: #18181b;
+  --color-graphite: #56565e;
+  --color-ash: #74747c;
+  --color-mist: #f6f6f5;
+  --color-fog: #ededeb;
+  --color-line: rgb(10 10 11 / 0.08);
+  --color-line-strong: rgb(10 10 11 / 0.15);
+
+  /* On an inverted band */
+  --color-bone: #f4f4f2;
+  --color-smoke: #a3a3ab;
+  --color-night-line: rgb(255 255 255 / 0.1);
+
+  /* Never invert — code figures, terminal output */
+  --color-void: #0a0a0b;
+  --color-chalk: #f4f4f2;
+
+  /* Accent: warm clay. Graphic use at full strength; text uses the
+     darker step so small type stays above 4.5:1 on paper. */
+  --color-accent: #d97757;
+  --color-accent-text: #b2502c;
+  --color-accent-soft: rgb(217 119 87 / 0.12);
+  --color-accent-line: rgb(217 119 87 / 0.35);
+
+  --ease-studio: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 70s linear infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+}
+
+/* Dark theme — same roles, swapped values. An inverted band becomes a
+   light band, so the page keeps its rhythm in both themes. */
+@layer theme {
+  :root[data-theme='dark'] {
+    --color-paper: #0a0a0b;
+    --color-ink: #f2f2f0;
+    --color-charcoal: #dededb;
+    --color-graphite: #a8a8b0;
+    --color-ash: #8b8b94;
+    --color-mist: #141416;
+    --color-fog: #1d1d20;
+    --color-line: rgb(255 255 255 / 0.1);
+    --color-line-strong: rgb(255 255 255 / 0.2);
+
+    --color-bone: #0a0a0b;
+    --color-smoke: #56565e;
+    --color-night-line: rgb(10 10 11 / 0.12);
+
+    --color-accent: #e08a6a;
+    --color-accent-text: #e89b7e;
+    --color-accent-soft: rgb(224 138 106 / 0.16);
+    --color-accent-line: rgb(224 138 106 / 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      --color-paper: #0a0a0b;
+      --color-ink: #f2f2f0;
+      --color-charcoal: #dededb;
+      --color-graphite: #a8a8b0;
+      --color-ash: #8b8b94;
+      --color-mist: #141416;
+      --color-fog: #1d1d20;
+      --color-line: rgb(255 255 255 / 0.1);
+      --color-line-strong: rgb(255 255 255 / 0.2);
+
+      --color-bone: #0a0a0b;
+      --color-smoke: #56565e;
+      --color-night-line: rgb(10 10 11 / 0.12);
+
+      --color-accent: #e08a6a;
+      --color-accent-text: #e89b7e;
+      --color-accent-soft: rgb(224 138 106 / 0.16);
+      --color-accent-line: rgb(224 138 106 / 0.4);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    color-scheme: light;
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      color-scheme: dark;
+    }
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: 'ss01', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition:
+      background-color 0.4s var(--ease-studio),
+      color 0.4s var(--ease-studio);
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Page container with faint vertical guides — the studio "frame". */
+  .frame {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .frame {
+      padding-inline: 2rem;
+    }
+  }
+
+  .guides {
+    position: relative;
+  }
+  .guides::before,
+  .guides::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-line);
+    pointer-events: none;
+  }
+  .guides::before {
+    left: 0;
+  }
+  .guides::after {
+    right: 0;
+  }
+  .on-dark .guides::before,
+  .on-dark .guides::after {
+    background: var(--color-night-line);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ash);
+  }
+
+  .display {
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+  }
+
+  .heading {
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+  }
+
+  /* Fine dotted grid used behind technical visuals */
+  .dot-grid {
+    background-image: radial-gradient(var(--color-line-strong) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
