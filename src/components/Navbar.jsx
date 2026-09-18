@@ -90,7 +90,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-1 sm:gap-2">
             <ThemeToggle />
-            <ArrowButton href={mailto('Start a project')} size="sm" className="hidden sm:inline-flex">
+            <ArrowButton href={mailto('Start a project')} size="sm" className="max-sm:hidden">
               Start a Project
             </ArrowButton>
             <button
