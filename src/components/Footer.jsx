@@ -58,8 +58,9 @@ export default function Footer() {
 
       {/* Oversized wordmark, cropped by the page edge */}
       <div aria-hidden="true" className="pointer-events-none select-none">
-        <p className="-mb-[0.18em] text-center text-[20vw] leading-[0.8] font-semibold tracking-[-0.06em] text-ink/[0.045]">
-          {site.wordmark}
+        <p className="-mb-[0.18em] text-center text-[20vw] leading-[0.8] font-semibold tracking-[-0.06em] text-ink/[0.05]">
+          {site.wordmarkLead}
+          <span className="text-accent/25">{site.wordmarkTail}</span>
         </p>
       </div>
     </footer>

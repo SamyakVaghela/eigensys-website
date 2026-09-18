@@ -20,7 +20,7 @@ function Words({ text, muted, startDelay }) {
   return text.split(' ').map((word, index) => (
     <span key={`${word}-${index}`} className="inline-flex overflow-hidden pb-[0.08em] align-bottom">
       <motion.span
-        className={`inline-block ${muted ? 'text-ash' : ''}`}
+        className={`inline-block ${muted ? 'text-accent' : ''}`}
         initial={{ y: '105%' }}
         animate={{ y: 0 }}
         transition={{ duration: 0.9, delay: startDelay + index * 0.045, ease }}
@@ -46,7 +46,7 @@ export default function Hero() {
         >
           <p className="eyebrow inline-flex items-center gap-2.5 rounded-full border border-line py-1.5 pr-3.5 pl-2 !text-graphite">
             <span className="inline-block size-1.5 rounded-[1px] bg-accent" aria-hidden="true" />
-            Anamnos / Technology Studio
+            EigenSys / Technology Studio
           </p>
           <p className="eyebrow hidden sm:block">AI × Data × Software</p>
         </motion.div>

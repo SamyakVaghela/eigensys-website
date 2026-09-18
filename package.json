@@ -1,9 +1,9 @@
 {
-  "name": "anamnos-website",
+  "name": "eigensys-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Anamnos — AI, data and software engineering studio website.",
+  "description": "EigenSys — AI, data and software engineering studio website.",
   "engines": {
     "node": ">=20.19.0"
   },

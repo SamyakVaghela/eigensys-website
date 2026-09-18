@@ -15,9 +15,9 @@ export default function SectionHeader({
   children,
 }) {
   const eyebrow = (
-    <p className={`eyebrow flex items-center gap-3 ${dark ? '!text-smoke' : ''}`}>
+    <p className={`eyebrow flex items-center gap-3 ${dark ? '!text-band-muted' : ''}`}>
       <span className="text-accent tabular-nums">{index}</span>
-      <span aria-hidden="true" className={`h-px w-6 ${dark ? 'bg-night-line' : 'bg-line-strong'}`} />
+      <span aria-hidden="true" className={`h-px w-6 ${dark ? 'bg-band-line' : 'bg-line-strong'}`} />
       <span>{label}</span>
     </p>
   )
@@ -35,7 +35,7 @@ export default function SectionHeader({
         <Reveal
           as="p"
           delay={0.08}
-          className={`mt-6 max-w-[58ch] text-[1.0625rem] leading-relaxed sm:text-lg ${dark ? 'text-smoke' : 'text-graphite'}`}
+          className={`mt-6 max-w-[58ch] text-[1.0625rem] leading-relaxed sm:text-lg ${dark ? 'text-band-muted' : 'text-graphite'}`}
         >
           {description}
         </Reveal>

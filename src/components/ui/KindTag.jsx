@@ -1,6 +1,6 @@
 const styles = {
-  Product: 'bg-ink text-paper border-ink',
-  'Open source': 'bg-paper text-ink border-ink/70',
+  Product: 'bg-accent-btn text-accent-btn-text border-accent-btn',
+  'Open source': 'bg-transparent text-accent-text border-accent-line',
   'R&D': 'bg-mist text-ink border-line-strong',
   Concept: 'bg-transparent text-ash border-dashed border-ash/60',
 }

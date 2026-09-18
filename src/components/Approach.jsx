@@ -8,15 +8,15 @@ function Step({ step, index, isLast }) {
     <li className={`relative grid gap-4 pl-12 sm:grid-cols-12 sm:gap-6 sm:pl-16 ${isLast ? '' : 'pb-14 sm:pb-20'}`}>
       <motion.span
         aria-hidden="true"
-        initial={{ backgroundColor: '#FFFFFF', scale: 0.8 }}
-        whileInView={{ backgroundColor: '#0A0A0B', scale: 1 }}
+        initial={{ opacity: 0.35, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ amount: 1, margin: '0px 0px -45% 0px' }}
         transition={{ duration: 0.4 }}
-        className="absolute top-1 left-[11px] size-[11px] rounded-full border border-ink sm:left-[19px]"
+        className="absolute top-1 left-[11px] size-[11px] rounded-full border-2 border-accent bg-paper sm:left-[19px]"
       />
       <Reveal className="sm:col-span-7">
         <div className="flex items-center gap-3">
-          <span className="font-mono text-xs text-ink tabular-nums">{step.number}</span>
+          <span className="font-mono text-xs text-accent tabular-nums">{step.number}</span>
           <span className="h-px w-5 bg-line-strong" aria-hidden="true" />
           <span className="eyebrow">{step.duration}</span>
         </div>
@@ -77,7 +77,7 @@ export default function Approach() {
               <motion.span
                 aria-hidden="true"
                 style={{ scaleY: progress }}
-                className="absolute top-2 bottom-2 left-4 w-px origin-top bg-ink sm:left-6"
+                className="absolute top-2 bottom-2 left-4 w-px origin-top bg-accent sm:left-6"
               />
               {approach.map((step, index) => (
                 <Step key={step.number} step={step} index={index} isLast={index === approach.length - 1} />

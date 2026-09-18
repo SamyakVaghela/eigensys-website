@@ -1,22 +1,25 @@
 @import 'tailwindcss';
 
 /* ------------------------------------------------------------------
-   Anamnos design tokens
+   EigenSys design tokens
 
-   Near-monochrome by intent: structure comes from borders, type and
-   space. One accent — a warm clay orange — marks what is live,
-   selected or in motion, and nothing else.
+   Black, white and one orange. Structure comes from borders, type and
+   space; the orange marks what is live, selected, primary or in motion.
 
    Token names describe a role, not a colour, so light and dark are the
    same design with the values swapped:
 
-     paper    page ground          ink      primary text / inverted surfaces
-     mist     quiet surface        fog      hover surface
-     charcoal strong body text     graphite body text        ash  labels
-     line     hairline             line-strong  emphasised hairline
-     bone / smoke / night-line     text + rules on an inverted band
-     void / chalk                  fixed near-black and near-white
-                                   (terminal figures, which never invert)
+     paper    page ground              ink      primary text
+     mist     raised surface           fog      further raised / hover
+     charcoal strong body text         graphite body text    ash  labels
+     line     hairline                 line-strong  emphasised hairline
+
+     band*    the full-width contrast section. Near-black on the light
+              theme, a raised charcoal on the dark theme — so dark mode
+              is dark everywhere instead of flipping one band to white.
+
+     void / chalk   fixed near-black and near-white that never invert
+                    (the terminal figure stays a terminal in both themes)
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -26,28 +29,34 @@
   --color-paper: #ffffff;
   --color-ink: #0a0a0b;
   --color-charcoal: #18181b;
-  --color-graphite: #56565e;
-  --color-ash: #74747c;
-  --color-mist: #f6f6f5;
-  --color-fog: #ededeb;
-  --color-line: rgb(10 10 11 / 0.08);
-  --color-line-strong: rgb(10 10 11 / 0.15);
+  --color-graphite: #55555d;
+  --color-ash: #73737b;
+  --color-mist: #f7f6f5;
+  --color-fog: #efedea;
+  --color-line: rgb(10 10 11 / 0.09);
+  --color-line-strong: rgb(10 10 11 / 0.16);
 
-  /* On an inverted band */
-  --color-bone: #f4f4f2;
-  --color-smoke: #a3a3ab;
-  --color-night-line: rgb(255 255 255 / 0.1);
+  /* Contrast band */
+  --color-band: #0a0a0b;
+  --color-band-raised: #141416;
+  --color-band-text: #f5f4f2;
+  --color-band-muted: #a2a2aa;
+  --color-band-line: rgb(255 255 255 / 0.1);
 
-  /* Never invert — code figures, terminal output */
+  /* Never invert */
   --color-void: #0a0a0b;
   --color-chalk: #f4f4f2;
 
-  /* Accent: warm clay. Graphic use at full strength; text uses the
-     darker step so small type stays above 4.5:1 on paper. */
+  /* Accent: clay orange.
+     accent        graphics, rules, marks at full strength
+     accent-text   small text on paper (>= 4.5:1)
+     accent-btn    solid button ground, with accent-btn-text on top */
   --color-accent: #d97757;
   --color-accent-text: #b2502c;
-  --color-accent-soft: rgb(217 119 87 / 0.12);
-  --color-accent-line: rgb(217 119 87 / 0.35);
+  --color-accent-btn: #b5532f;
+  --color-accent-btn-text: #ffffff;
+  --color-accent-soft: rgb(217 119 87 / 0.1);
+  --color-accent-line: rgb(217 119 87 / 0.38);
 
   --ease-studio: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -73,50 +82,60 @@
   }
 }
 
-/* Dark theme — same roles, swapped values. An inverted band becomes a
-   light band, so the page keeps its rhythm in both themes. */
+/* Dark theme — same roles, swapped values.
+   The selector is attribute-based rather than :root-only, so the app can
+   also stamp the theme on a wrapper element and stay correct even when
+   something else owns the <html> attribute. */
 @layer theme {
-  :root[data-theme='dark'] {
-    --color-paper: #0a0a0b;
-    --color-ink: #f2f2f0;
+  [data-theme='dark'] {
+    --color-paper: #08080a;
+    --color-ink: #f3f3f1;
     --color-charcoal: #dededb;
-    --color-graphite: #a8a8b0;
-    --color-ash: #8b8b94;
-    --color-mist: #141416;
-    --color-fog: #1d1d20;
+    --color-graphite: #a6a6ae;
+    --color-ash: #8a8a93;
+    --color-mist: #121215;
+    --color-fog: #1b1b1f;
     --color-line: rgb(255 255 255 / 0.1);
     --color-line-strong: rgb(255 255 255 / 0.2);
 
-    --color-bone: #0a0a0b;
-    --color-smoke: #56565e;
-    --color-night-line: rgb(10 10 11 / 0.12);
+    --color-band: #101013;
+    --color-band-raised: #17171b;
+    --color-band-text: #f3f3f1;
+    --color-band-muted: #a6a6ae;
+    --color-band-line: rgb(255 255 255 / 0.09);
 
-    --color-accent: #e08a6a;
-    --color-accent-text: #e89b7e;
-    --color-accent-soft: rgb(224 138 106 / 0.16);
-    --color-accent-line: rgb(224 138 106 / 0.4);
+    --color-accent: #e8916f;
+    --color-accent-text: #ef9f80;
+    --color-accent-btn: #e8916f;
+    --color-accent-btn-text: #14100e;
+    --color-accent-soft: rgb(232 145 111 / 0.14);
+    --color-accent-line: rgb(232 145 111 / 0.42);
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme='light']) {
-      --color-paper: #0a0a0b;
-      --color-ink: #f2f2f0;
+      --color-paper: #08080a;
+      --color-ink: #f3f3f1;
       --color-charcoal: #dededb;
-      --color-graphite: #a8a8b0;
-      --color-ash: #8b8b94;
-      --color-mist: #141416;
-      --color-fog: #1d1d20;
+      --color-graphite: #a6a6ae;
+      --color-ash: #8a8a93;
+      --color-mist: #121215;
+      --color-fog: #1b1b1f;
       --color-line: rgb(255 255 255 / 0.1);
       --color-line-strong: rgb(255 255 255 / 0.2);
 
-      --color-bone: #0a0a0b;
-      --color-smoke: #56565e;
-      --color-night-line: rgb(10 10 11 / 0.12);
+      --color-band: #101013;
+      --color-band-raised: #17171b;
+      --color-band-text: #f3f3f1;
+      --color-band-muted: #a6a6ae;
+      --color-band-line: rgb(255 255 255 / 0.09);
 
-      --color-accent: #e08a6a;
-      --color-accent-text: #e89b7e;
-      --color-accent-soft: rgb(224 138 106 / 0.16);
-      --color-accent-line: rgb(224 138 106 / 0.4);
+      --color-accent: #e8916f;
+      --color-accent-text: #ef9f80;
+      --color-accent-btn: #e8916f;
+      --color-accent-btn-text: #14100e;
+      --color-accent-soft: rgb(232 145 111 / 0.14);
+      --color-accent-line: rgb(232 145 111 / 0.42);
     }
   }
 }
@@ -130,7 +149,7 @@
     color-scheme: light;
   }
 
-  :root[data-theme='dark'] {
+  [data-theme='dark'] {
     color-scheme: dark;
   }
   @media (prefers-color-scheme: dark) {
@@ -146,14 +165,11 @@
     font-feature-settings: 'ss01', 'cv11';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition:
-      background-color 0.4s var(--ease-studio),
-      color 0.4s var(--ease-studio);
   }
 
   ::selection {
     background: var(--color-accent);
-    color: #ffffff;
+    color: #14100e;
   }
 
   h1,
@@ -174,6 +190,17 @@
 }
 
 @layer components {
+  /* The app shell owns the page ground, so the theme holds even if the
+     document background is set by something outside the app. */
+  .app-shell {
+    min-height: 100%;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    transition:
+      background-color 0.35s var(--ease-studio),
+      color 0.35s var(--ease-studio);
+  }
+
   /* Page container with faint vertical guides — the studio "frame". */
   .frame {
     width: 100%;
@@ -206,9 +233,9 @@
   .guides::after {
     right: 0;
   }
-  .on-dark .guides::before,
-  .on-dark .guides::after {
-    background: var(--color-night-line);
+  .on-band .guides::before,
+  .on-band .guides::after {
+    background: var(--color-band-line);
   }
 
   .eyebrow {

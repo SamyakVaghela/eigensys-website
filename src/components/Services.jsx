@@ -28,13 +28,13 @@ function DetailPanel({ service, index }) {
           aria-live="polite"
         >
           <p className="eyebrow">{service.group}</p>
-          <p className="mt-2 text-2xl font-medium tracking-[-0.02em]">{service.name}</p>
+          <p className="mt-2 text-2xl font-medium tracking-[-0.02em] text-ink">{service.name}</p>
           <p className="mt-3 text-[0.9375rem] leading-relaxed text-graphite">{service.summary}</p>
           <p className="eyebrow mt-6">You receive</p>
           <ul className="mt-2 space-y-1.5">
             {service.outputs.map((output) => (
               <li key={output} className="flex items-center gap-2.5 text-sm text-ink">
-                <span className="h-px w-3 bg-ink" aria-hidden="true" />
+                <span className="h-px w-3 bg-accent" aria-hidden="true" />
                 {output}
               </li>
             ))}
@@ -65,7 +65,7 @@ function ServiceRow({ service, index, active, open, onActivate, onToggle }) {
           aria-hidden="true"
           className="absolute inset-y-0 -right-3 -left-3 origin-bottom scale-y-0 rounded-lg bg-mist transition-transform duration-500 ease-studio group-hover:scale-y-100 group-data-active:lg:scale-y-100"
         />
-        <span className="relative w-7 shrink-0 font-mono text-xs text-ash tabular-nums transition-all duration-500 ease-studio lg:-translate-x-2 lg:opacity-0 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 lg:group-data-active:translate-x-0 lg:group-data-active:opacity-100">
+        <span className="relative w-7 shrink-0 font-mono text-xs text-accent tabular-nums transition-all duration-500 ease-studio lg:-translate-x-2 lg:opacity-0 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 lg:group-data-active:translate-x-0 lg:group-data-active:opacity-100">
           {number}
         </span>
         <span className="relative flex-1 text-[1.3125rem] font-medium tracking-[-0.025em] transition-transform duration-500 ease-studio group-hover:translate-x-1.5 sm:text-[1.625rem] lg:group-data-active:translate-x-1.5">

@@ -37,7 +37,7 @@ export const approach = [
   },
 ]
 
-/** "Why Anamnos" principles. Not a sequence, so no numbers. */
+/** "Why EigenSys" principles. Not a sequence, so no numbers. */
 export const principles = [
   {
     title: 'AI-native',

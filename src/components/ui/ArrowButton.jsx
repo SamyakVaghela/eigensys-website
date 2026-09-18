@@ -1,9 +1,9 @@
 import { ArrowRight } from 'lucide-react'
 
 const variants = {
-  primary: 'bg-ink text-paper hover:bg-charcoal',
-  secondary: 'border border-line-strong bg-paper/60 text-ink hover:border-ink/40 hover:bg-mist',
-  inverted: 'bg-bone text-ink hover:bg-white',
+  primary: 'bg-accent-btn text-accent-btn-text hover:brightness-95',
+  secondary: 'border border-line-strong bg-paper/60 text-ink hover:border-accent hover:text-accent-text',
+  inverted: 'bg-band-text text-band hover:brightness-95',
   ghost: 'text-ink hover:bg-mist',
 }
 

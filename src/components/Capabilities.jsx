@@ -9,7 +9,7 @@ function Row({ hidden = false }) {
           <li className="px-6 text-[0.8125rem] font-medium tracking-[0.14em] whitespace-nowrap text-graphite uppercase sm:px-9">
             {item}
           </li>
-          <li aria-hidden="true" className="font-mono text-xs text-ash/70">
+          <li aria-hidden="true" className="font-mono text-xs text-accent">
             /
           </li>
         </Fragment>

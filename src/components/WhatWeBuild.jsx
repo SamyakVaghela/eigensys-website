@@ -24,15 +24,15 @@ function PracticeCard({ practice, index }) {
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           style={{
             background:
-              'radial-gradient(420px circle at var(--x, 50%) var(--y, 0%), rgb(10 10 11 / 0.045), transparent 60%)',
+              'radial-gradient(420px circle at var(--x, 50%) var(--y, 0%), var(--color-accent-soft), transparent 60%)',
           }}
         />
 
         <div className="relative flex items-start justify-between">
-          <span className="text-[4.25rem] leading-none font-light tracking-[-0.06em] text-ink/15 tabular-nums transition-colors duration-500 group-hover:text-ink">
+          <span className="text-[4.25rem] leading-none font-light tracking-[-0.06em] text-ink/15 tabular-nums transition-colors duration-500 group-hover:text-accent">
             {practice.number}
           </span>
-          <span className="inline-flex size-10 items-center justify-center rounded-xl border border-line text-ink transition-colors duration-500 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
+          <span className="inline-flex size-10 items-center justify-center rounded-xl border border-line text-ink transition-colors duration-500 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-btn-text">
             <Icon className="size-[1.125rem]" strokeWidth={1.5} aria-hidden="true" />
           </span>
         </div>

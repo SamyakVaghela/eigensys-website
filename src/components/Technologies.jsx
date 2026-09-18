@@ -64,8 +64,8 @@ export default function Technologies() {
                           onClick={() => setSelected({ group: group.label, name: item.name })}
                           className={`inline-flex h-8 items-center rounded-full border px-3 text-[0.8125rem] transition-all duration-300 ease-studio ${
                             isSelected
-                              ? 'border-ink bg-ink text-paper'
-                              : 'border-line bg-paper text-charcoal hover:border-line-strong'
+                              ? 'border-accent-btn bg-accent-btn text-accent-btn-text'
+                              : 'border-line bg-paper text-charcoal hover:border-accent hover:text-accent-text'
                           }`}
                         >
                           {item.name}
@@ -89,7 +89,7 @@ export default function Technologies() {
                 className="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:gap-4"
                 aria-live="polite"
               >
-                <p className="font-mono text-xs text-ink">
+                <p className="font-mono text-xs text-accent-text">
                   <span className="text-ash">{detail.group} /</span> {detail.name}
                 </p>
                 <p className="text-sm text-graphite">{detail.note}</p>

@@ -5,20 +5,23 @@
  */
 
 export const site = {
-  name: 'Anamnos',
-  wordmark: 'ANAMNOS',
+  name: 'EigenSys',
+  // The wordmark is set in two parts so "SYS" can carry the accent colour.
+  wordmarkLead: 'EIGEN',
+  wordmarkTail: 'SYS',
+  wordmark: 'EIGENSYS',
   tagline: 'AI × Data × Software',
-  domain: 'anamnos.dev', // also update index.html, public/robots.txt, public/sitemap.xml
+  domain: 'eigensys.dev', // also update index.html, public/robots.txt, public/sitemap.xml
 
   // The name, for the About section.
   etymology: {
-    greek: 'ἀνάμνησις',
-    gloss: 'anamnesis — recollection',
-    note: "Plato's claim that learning is remembering, and the word a clinician uses for the history that explains the symptom. Both are the same idea: the answer is already in the record, if you can retrieve it and show your evidence.",
+    term: 'eigen',
+    gloss: "German for 'own', 'characteristic'",
+    note: 'An eigenvector is the one direction a transformation leaves pointing the same way — everything else rotates around it. That is the job: find the few characteristic directions in a business, and build the system along them.',
   },
 
   // PLACEHOLDER — replace with your real inbox.
-  email: 'hello@anamnos.dev',
+  email: 'hello@eigensys.dev',
 
   location: 'India',
   timezone: 'Asia/Kolkata',

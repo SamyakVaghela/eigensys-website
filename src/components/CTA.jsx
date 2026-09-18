@@ -90,7 +90,7 @@ export default function CTA() {
             <ol className="mt-4 border-t border-line">
               {briefChecklist.map((item, index) => (
                 <li key={item} className="flex items-baseline gap-4 border-b border-line py-3.5">
-                  <span className="font-mono text-[0.6875rem] text-ash tabular-nums">
+                  <span className="font-mono text-[0.6875rem] text-accent tabular-nums">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <span className="text-[0.9375rem] text-charcoal">{item}</span>

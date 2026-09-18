@@ -39,7 +39,7 @@ function CaseStudy({ study, index }) {
       <div className={`min-w-0 lg:col-span-5 ${flip ? 'lg:order-2 lg:col-start-8' : ''}`}>
         <Reveal>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            <span className="font-mono text-xs text-ink tabular-nums">{String(index + 1).padStart(2, '0')}</span>
+            <span className="font-mono text-xs text-accent tabular-nums">{String(index + 1).padStart(2, '0')}</span>
             <KindTag kind={study.kind} />
             <span className="eyebrow">
               {study.domain} · {study.year}
@@ -131,7 +131,7 @@ function IndexRow({ item }) {
       <div className="relative grid gap-3 py-6 md:grid-cols-12 md:gap-6">
         <div className="md:col-span-4">
           <div className="flex flex-wrap items-center gap-2.5">
-            <h4 className="text-lg font-medium tracking-[-0.015em] transition-transform duration-500 ease-studio group-hover:translate-x-1">
+            <h4 className="text-lg font-medium tracking-[-0.015em] transition-all duration-500 ease-studio group-hover:translate-x-1 group-hover:text-accent-text">
               {item.title}
             </h4>
           </div>
@@ -210,13 +210,13 @@ export default function Work() {
                     onClick={() => setDomain(option)}
                     className={`inline-flex h-8 items-center gap-2 rounded-full border px-3 text-[0.8125rem] transition-colors duration-200 ${
                       selected
-                        ? 'border-ink bg-ink text-paper'
-                        : 'border-line text-graphite hover:border-line-strong hover:text-ink'
+                        ? 'border-accent-btn bg-accent-btn text-accent-btn-text'
+                        : 'border-line text-graphite hover:border-accent hover:text-accent-text'
                     }`}
                   >
                     {option}
                     <span
-                      className={`font-mono text-[0.625rem] tabular-nums ${selected ? 'text-paper/60' : 'text-ash'}`}
+                      className={`font-mono text-[0.625rem] tabular-nums ${selected ? 'text-accent-btn-text/70' : 'text-ash'}`}
                     >
                       {count}
                     </span>
