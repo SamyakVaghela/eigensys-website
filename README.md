@@ -123,7 +123,6 @@ and redefines their values for dark mode, so both themes are the same design wit
 
 | What | Where |
 | --- | --- |
-| Contact email `hello@eigensys.dev` | `src/content/site.js` (also JSON-LD in `index.html`) |
 | Domain `eigensys.dev` | `src/content/site.js`, `index.html` (canonical, og:url, og:image, JSON-LD), `public/robots.txt`, `public/sitemap.xml` |
 | Availability line and response-time promise | `src/content/site.js`. Keep them true. |
 | Engagement lengths and pricing wording | `src/content/engagements.js` — currently "fixed price", no numbers |
@@ -147,8 +146,7 @@ them in `Footer.jsx`.
 ## Ideas for the next iteration
 
 1. Case-study pages (`/work/talentlens`…) with architecture diagrams, real screenshots and links to repos or demos.
-2. A project brief form in place of `mailto:` — Formspree, Web3Forms or a Cloudflare Worker.
-3. A real evaluation number for Corrective RAG once the full 32-question run finishes. A measured figure beats any adjective.
-4. A founders block with names, photos and roles — the biggest remaining trust gap for a small studio.
-5. Publish the production RAG and AI-reliability material as articles for SEO.
-6. Analytics and a Lighthouse pass. Loading Motion through `LazyMotion` would shrink the JavaScript bundle.
+2. A real evaluation number for Corrective RAG once the full 32-question run finishes. A measured figure beats any adjective.
+3. A founders block with names, photos and roles — the biggest remaining trust gap for a small studio.
+4. Publish the production RAG and AI-reliability material as articles for SEO.
+5. Analytics and a Lighthouse pass. Loading Motion through `LazyMotion` would shrink the JavaScript bundle.

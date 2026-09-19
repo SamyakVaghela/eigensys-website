@@ -17,10 +17,10 @@ export default function Footer() {
               automation and digital products.
             </p>
             <a
-              href={`mailto:${site.email}`}
+              href="#contact"
               className="mt-6 inline-block font-mono text-sm text-ink underline decoration-accent-line underline-offset-4 transition-colors hover:text-accent-text"
             >
-              {site.email}
+              Get in touch
             </a>
           </div>
 

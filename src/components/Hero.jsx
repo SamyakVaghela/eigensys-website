@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 import ArrowButton from './ui/ArrowButton'
 import SystemField from './SystemField'
-import { mailto, site } from '../content/site'
+import { site } from '../content/site'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -73,7 +73,7 @@ export default function Hero() {
               AI, data, software and automation — engineered to turn complex problems into products that work.
             </p>
             <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row">
-              <ArrowButton href={mailto('Start a project')} size="lg">
+              <ArrowButton href="#contact" size="lg">
                 Start a Project
               </ArrowButton>
               <ArrowButton href="#work" variant="secondary" size="lg" arrow={false}>

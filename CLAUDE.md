@@ -123,9 +123,14 @@ label — Product, Open source, R&D or Concept — and the Concept ones are not 
 Sample data inside the figures is captioned as illustrative. Don't quietly upgrade a
 label, invent metrics, or drop the captions.
 
-**Placeholders still in the code:** `hello@eigensys.dev` and the domain `eigensys.dev`
-(in `site.js`, `index.html`, `robots.txt`, `sitemap.xml`). The pre-launch checklist is at
-the bottom of `README.md`.
+**Placeholder still in the code:** the domain `eigensys.dev` (in `site.js`, `index.html`,
+`robots.txt`, `sitemap.xml`). The pre-launch checklist is at the bottom of `README.md`.
+
+**Contact is a form, not a mailto.** All CTAs (`Start a Project`, `Start a Conversation`,
+footer, FAQ, Engagements) link to `#contact`, which renders an inline form (`CTA.jsx`)
+that posts to Web3Forms — no backend needed. The access key lives in
+`site.web3formsAccessKey`; it's meant to be public (it just identifies where submissions
+get delivered), not a secret to hide. Don't reintroduce a `mailto:` link.
 
 ## Commit style
 

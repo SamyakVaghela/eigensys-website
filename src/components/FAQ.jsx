@@ -4,7 +4,6 @@ import { Plus } from 'lucide-react'
 import SectionHeader from './ui/SectionHeader'
 import Reveal from './ui/Reveal'
 import { faqs } from '../content/faq'
-import { mailto } from '../content/site'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -77,7 +76,7 @@ export default function FAQ() {
                 <p className="mt-8 text-sm leading-relaxed text-ash">
                   Something not covered here?{' '}
                   <a
-                    href={mailto('Question')}
+                    href="#contact"
                     className="text-accent-text underline decoration-accent-line underline-offset-4 transition-colors hover:decoration-current"
                   >
                     Ask us directly

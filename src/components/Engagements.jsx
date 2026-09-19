@@ -3,7 +3,6 @@ import SectionHeader from './ui/SectionHeader'
 import Reveal from './ui/Reveal'
 import ArrowButton from './ui/ArrowButton'
 import { engagementNote, engagements } from '../content/engagements'
-import { mailto } from '../content/site'
 
 export default function Engagements() {
   return (
@@ -61,7 +60,7 @@ export default function Engagements() {
         <Reveal delay={0.1}>
           <div className="mt-10 flex flex-col items-start gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-[58ch] text-[0.9375rem] leading-relaxed text-graphite">{engagementNote}</p>
-            <ArrowButton href={mailto('Project brief')} variant="secondary">
+            <ArrowButton href="#contact" variant="secondary">
               Get an estimate
             </ArrowButton>
           </div>

@@ -6,7 +6,7 @@ import ArrowButton from './ui/ArrowButton'
 import ThemeToggle from './ui/ThemeToggle'
 import { useScrolled } from '../hooks/useScrolled'
 import { useActiveSection } from '../hooks/useActiveSection'
-import { mailto, nav, site } from '../content/site'
+import { nav, site } from '../content/site'
 
 export default function Navbar() {
   const scrolled = useScrolled(16)
@@ -90,7 +90,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-1 sm:gap-2">
             <ThemeToggle />
-            <ArrowButton href={mailto('Start a project')} size="sm" className="max-sm:hidden">
+            <ArrowButton href="#contact" size="sm" className="max-sm:hidden">
               Start a Project
             </ArrowButton>
             <button
@@ -148,15 +148,9 @@ export default function Navbar() {
                 transition={{ delay: 0.3 }}
                 className="mt-auto flex flex-col gap-4 pt-10"
               >
-                <ArrowButton href={mailto('Start a project')} size="lg" className="w-full">
+                <ArrowButton href="#contact" size="lg" className="w-full" onClick={() => setOpen(false)}>
                   Start a Project
                 </ArrowButton>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="text-center font-mono text-sm text-graphite transition-colors hover:text-accent-text"
-                >
-                  {site.email}
-                </a>
               </motion.div>
             </div>
           </motion.div>
