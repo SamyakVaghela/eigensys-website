@@ -9,9 +9,9 @@ const ease = [0.22, 1, 0.36, 1]
 
 function DetailPanel({ service, index }) {
   return (
-    <div className="relative mt-12 hidden overflow-hidden rounded-2xl border border-line bg-mist lg:block">
+    <div className="relative mt-12 hidden overflow-hidden rounded-2xl border border-line bg-mist lg:sticky lg:top-24 lg:flex lg:max-h-[calc(100dvh-7rem)] lg:flex-col">
       <div className="dot-grid absolute inset-0 opacity-60" aria-hidden="true" />
-      <div className="relative flex items-center justify-between border-b border-line px-5 py-3">
+      <div className="relative flex shrink-0 items-center justify-between border-b border-line px-5 py-3">
         <span className="eyebrow">Service detail</span>
         <span className="font-mono text-[0.6875rem] text-ash tabular-nums">
           {String(index + 1).padStart(2, '0')} / {services.length}
@@ -24,7 +24,7 @@ function DetailPanel({ service, index }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.3, ease }}
-          className="relative min-h-[16.5rem] p-6"
+          className="relative min-h-0 flex-1 overflow-y-auto p-6"
           aria-live="polite"
         >
           <p className="eyebrow">{service.group}</p>
@@ -116,23 +116,21 @@ export default function Services() {
       <div className="frame guides py-24 sm:py-32 lg:py-40">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-28">
-              <Reveal>
-                <p className="eyebrow flex items-center gap-3">
-                  <span className="text-accent tabular-nums">02</span>
-                  <span aria-hidden="true" className="h-px w-6 bg-line-strong" />
-                  <span>Services</span>
-                </p>
-              </Reveal>
-              <Reveal as="h2" id="services-title" className="heading mt-6 text-[clamp(2.25rem,4.6vw,3.75rem)]">
-                Technical depth. Practical execution.
-              </Reveal>
-              <Reveal as="p" delay={0.08} className="mt-6 max-w-[44ch] text-[1.0625rem] leading-relaxed text-graphite">
-                Sixteen disciplines, one team. Most projects draw on three or four of them — we bring the ones the
-                problem actually needs.
-              </Reveal>
-              <DetailPanel service={services[active]} index={active} />
-            </div>
+            <Reveal>
+              <p className="eyebrow flex items-center gap-3">
+                <span className="text-accent tabular-nums">02</span>
+                <span aria-hidden="true" className="h-px w-6 bg-line-strong" />
+                <span>Services</span>
+              </p>
+            </Reveal>
+            <Reveal as="h2" id="services-title" className="heading mt-6 text-[clamp(2.25rem,4.6vw,3.75rem)]">
+              Technical depth. Practical execution.
+            </Reveal>
+            <Reveal as="p" delay={0.08} className="mt-6 max-w-[44ch] text-[1.0625rem] leading-relaxed text-graphite">
+              Sixteen disciplines, one team. Most projects draw on three or four of them — we bring the ones the problem
+              actually needs.
+            </Reveal>
+            <DetailPanel service={services[active]} index={active} />
           </div>
 
           <Reveal className="lg:col-span-7">
