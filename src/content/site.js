@@ -11,7 +11,9 @@ export const site = {
   wordmarkTail: 'SYS',
   wordmark: 'EIGENSYS',
   tagline: 'AI × Data × Software',
-  domain: 'eigensys.dev', // also update index.html, public/robots.txt, public/sitemap.xml
+  // Vercel deployment URL, used for cold outreach. Swap for eigensys.dev (or your real
+  // domain) once it's connected — also update index.html, public/robots.txt, public/sitemap.xml
+  domain: 'eigensys-website.vercel.app',
 
   // The name, for the About section.
   etymology: {

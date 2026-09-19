@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eigensys.dev/sitemap.xml
+Sitemap: https://eigensys-website.vercel.app/sitemap.xml
