@@ -13,6 +13,10 @@ export const capabilityStrip = [
   'Computer Vision',
   'NLP',
   'Cloud',
+  'Commerce',
+  'Payments',
+  'CRM',
+  'Content Platforms',
 ]
 
 /** "What we build" — the four practice areas. */
@@ -40,9 +44,10 @@ export const practices = [
     number: '03',
     title: 'Digital Products',
     icon: LayoutGrid,
-    body: 'Web applications, SaaS platforms, dashboards, APIs and custom software.',
-    detail: 'Typed front ends, clean APIs and infrastructure sized for the product you actually have.',
-    tags: ['Web apps', 'SaaS', 'APIs', 'Dashboards'],
+    body: 'Web applications, SaaS platforms, commerce and content platforms, dashboards, APIs and custom software.',
+    detail:
+      'Typed front ends, clean APIs and infrastructure sized for the product you actually have — catalogs and checkout, a video or photo feed you own, admin tooling with real access control.',
+    tags: ['Web apps', 'SaaS', 'Commerce', 'Content platforms', 'APIs', 'Dashboards'],
   },
   {
     id: 'automation',

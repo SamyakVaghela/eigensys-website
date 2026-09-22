@@ -99,4 +99,60 @@ export const services = [
     summary: 'Connecting the tools a team already uses, with AI steps where judgment is needed.',
     outputs: ['Process map', 'Integrations', 'Human-in-the-loop checkpoints'],
   },
+  {
+    name: 'E-commerce & Ordering',
+    group: 'Products',
+    summary:
+      'Catalogs, package pages, carts and checkout, with order IDs and a status pipeline customers can actually follow.',
+    outputs: ['Catalog & package pages', 'Order & status model', 'Customer dashboard'],
+  },
+  {
+    name: 'Payments & Checkout',
+    group: 'Products',
+    summary:
+      'UPI, cards and net banking through Indian gateways, wired so a successful payment updates the order exactly once.',
+    outputs: ['Gateway integration', 'Idempotent webhooks', 'Reconciliation reports'],
+  },
+  {
+    name: 'CRM & Customer Data',
+    group: 'Data',
+    summary:
+      'One customer record — profile, consent, history, contribution and what to send next — with the segments your team actually filters on.',
+    outputs: ['Customer schema', 'Consent records', 'Admin segments & filters'],
+  },
+  {
+    name: 'Messaging Automation',
+    group: 'Automation',
+    summary:
+      'WhatsApp, SMS and email that fire on real events: confirmations, status updates, scheduled reminders. Opt-in and opt-out handled properly.',
+    outputs: ['Template set', 'Scheduling rules', 'Consent & unsubscribe handling'],
+  },
+  {
+    name: 'Content Platforms & CMS',
+    group: 'Products',
+    summary:
+      'Your own feed instead of renting one: vertical video and photo posts, comments, moderation, and publishing that needs no developer.',
+    outputs: ['Content model & CMS', 'Moderation tools', 'Shareable URLs with previews'],
+  },
+  {
+    name: 'Media Pipelines',
+    group: 'Products',
+    summary:
+      'Large photo and video volumes handled: secure uploads, compression, thumbnails, CDN delivery and lazy loading that keeps pages fast on phones.',
+    outputs: ['Upload & processing pipeline', 'CDN delivery', 'Performance budget'],
+  },
+  {
+    name: 'Admin Dashboards & Access Control',
+    group: 'Products',
+    summary:
+      'The screens your team lives in — orders, content, payments, uploads — with roles scoped so each person sees only their part.',
+    outputs: ['Role-based access', 'Operations dashboards', 'Audit trail'],
+  },
+  {
+    name: 'Product Analytics',
+    group: 'Data',
+    summary:
+      'Funnels from view to order, content performance, repeat rates and what each campaign or coupon actually returned.',
+    outputs: ['Event schema', 'Funnel & cohort reports', 'Attribution'],
+  },
 ]

@@ -37,6 +37,11 @@ export const stackGroups = [
       { name: 'Node.js', note: 'Services and developer tools.' },
       { name: 'FastAPI', note: 'Typed, async Python APIs with OpenAPI docs.' },
       { name: 'REST APIs', note: 'Documented contracts between systems.' },
+      { name: 'Payments', note: 'UPI, cards and net banking, wired so a webhook updates an order exactly once.' },
+      {
+        name: 'WhatsApp Business API',
+        note: 'Templated confirmations and reminders, opt-in and opt-out handled properly.',
+      },
     ],
   },
   {
@@ -48,6 +53,7 @@ export const stackGroups = [
       { name: 'AWS', note: 'Compute, storage and managed data services.' },
       { name: 'Azure', note: 'Enterprise deployments and Microsoft data platforms.' },
       { name: 'Vercel', note: 'Front ends shipped from every commit.' },
+      { name: 'CDN', note: 'Media delivery, caching and lazy loading that keeps pages fast on phones.' },
     ],
   },
 ]

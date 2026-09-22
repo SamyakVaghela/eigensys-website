@@ -182,6 +182,36 @@ export const workIndex = [
     summary: 'Defect detection on production-line images, exported to run on the edge device beside the camera.',
     stack: ['PyTorch', 'OpenCV', 'ONNX', 'FastAPI'],
   },
+  {
+    id: 'celebration-commerce',
+    title: 'Celebration Commerce Platform',
+    kind: 'Concept',
+    year: '—',
+    domain: 'Products',
+    summary:
+      'A catalog of celebration and seva packages with consent-aware order forms, UPI checkout, traceable order IDs and a status pipeline that ends in a proof page showing where the contribution went.',
+    stack: ['React', 'Node.js', 'PostgreSQL', 'Payments', 'Object storage'],
+  },
+  {
+    id: 'shoppable-story-feed',
+    title: 'Shoppable Story Feed',
+    kind: 'Concept',
+    year: '—',
+    domain: 'Products',
+    summary:
+      'A vertical video and photo feed hosted on your own domain, where every post attaches to a package — watch what was given, then order the same thing. Comments, moderation and per-post shareable links.',
+    stack: ['React', 'CMS', 'Media pipeline', 'CDN', 'REST APIs'],
+  },
+  {
+    id: 'lifecycle-crm',
+    title: 'Lifecycle CRM & Reminder Engine',
+    kind: 'Concept',
+    year: '—',
+    domain: 'Automation',
+    summary:
+      'A consent-based customer database that remembers the dates that matter, sends WhatsApp and email reminders on schedule, pre-fills a repeat order and applies the right reward — with opt-out honoured everywhere.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'WhatsApp Business API', 'Scheduling'],
+  },
 ]
 
 export const workDomains = ['All', 'AI Systems', 'Data', 'Products', 'Automation']

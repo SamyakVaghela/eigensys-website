@@ -127,8 +127,8 @@ export default function Services() {
               Technical depth. Practical execution.
             </Reveal>
             <Reveal as="p" delay={0.08} className="mt-6 max-w-[44ch] text-[1.0625rem] leading-relaxed text-graphite">
-              Sixteen disciplines, one team. Most projects draw on three or four of them — we bring the ones the problem
-              actually needs.
+              {services.length} disciplines, one team. Most projects draw on three or four of them — we bring the ones
+              the problem actually needs.
             </Reveal>
             <DetailPanel service={services[active]} index={active} />
           </div>

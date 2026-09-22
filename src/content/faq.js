@@ -32,4 +32,8 @@ export const faqs = [
     q: 'What if AI is the wrong answer for our problem?',
     a: 'We will tell you in the first call. A well-written query, a rules engine or a better form beats a model more often than the industry admits, and saying so early costs you nothing.',
   },
+  {
+    q: 'Do you only take AI projects?',
+    a: "No. A good half of what we build is ordinary, well-made software — catalogs, checkouts, dashboards, integrations — and we add intelligence only where it earns its place. If a rules engine or a better form solves it, that's what you'll get.",
+  },
 ]
